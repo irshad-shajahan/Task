@@ -2,8 +2,8 @@ var express = require('express');
 const userHelpers = require('../helpers/userHelpers');
 var router = express.Router();
 const admin = {
-  id:"admin",
-  password:"1234"
+  id:process.env.ADMIN,
+  password:process.env.PASSWORD
 }
 
 /* GET users listing. */

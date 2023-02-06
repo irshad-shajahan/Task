@@ -1,11 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
-
+require('dotenv').config()
 const state = {
     db:null
 }
 
 module.exports.Connect = function(done){
-    const url = 'mongodb://localhost:27017'
+    const url= process.env.DATABASE
+  
     const dbName = 'Task'
     MongoClient.connect(url,(err,data)=>{
         if(err) return done(err)
